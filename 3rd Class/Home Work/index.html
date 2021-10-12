@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Home Practice</title>
+</head>
+<body>
+    <div class="currency-exchange">
+        <h1>Currency Exchange</h1>
+        <label for="pkr">PKR</label>
+        <input type="number" id="pkr" placeholder="0"><br>
+        <label for="usd">USD</label>
+        <input type="number" id="usd" placeholder="0"><br>
+        <button onclick="convert()">Exchange</button>
+        <p id="exchange"></p>
+    </div>
+    <hr>
+    <div class="grade-converter">
+        <h1>Grade Convertor</h1><br>
+        <span>Please Enter your marks</span>
+        <input type="number" id="marks" min="0" max="100" placeholder="0">
+        <button onclick="marks()">Go!</button>
+        <p id="grade"></p>
+    </div>
+    <hr>
+    <div class="temperature">
+        <h1>Temperature Convertor</h1>
+        <input type="number"id="temperature" max="50"placeholder="0">
+        <button onclick="temperatureCalculate()">Click It!</button>
+        <p id="temp"></p>
+    </div>
+    <hr>
+    <script>
+        
+        // This function is for  convert currency
+
+        const convert=()=>{
+            let pkr=document.getElementById('pkr').value;
+            let usd=document.getElementById('usd').value;
+            // let convertedusd=Number(convertedpkr/171)
+            console.log(pkr)
+            if(pkr){
+                let convertedusd=Number(pkr/170.50).toFixed(3);
+                document.getElementById('usd').value=convertedusd;
+                document.getElementById('exchange').innerText=`${convertedusd} USD`
+            }
+            else if(usd){
+                let convertedpkr=Number(usd*170.50).toFixed(3);
+                document.getElementById('pkr').value=convertedpkr;
+                document.getElementById('exchange').innerText=`${convertedpkr} PKR`
+            }
+            else{
+                document.getElementById('exchange').innerText="Please Fill the Field"
+            }
+
+        }
+
+        // this function is for Calculate Grade
+        
+        const marks=()=>{
+            let marks=document.getElementById('marks').value;
+            if(marks){
+                if(marks>=90){
+                    document.getElementById("grade").innerText="Grade: A+";
+                }
+                else if(marks>=80){
+                    document.getElementById("grade").innerText="Grade: A";
+                }
+                else if(marks>=70){
+                    document.getElementById("grade").innerText="Grade: B";
+                }
+                else if(marks>=60){
+                    document.getElementById("grade").innerText="Grade: C";
+                }
+                else if(marks>=50){
+                    document.getElementById("grade").innerText="Grade: D";
+                }
+                else{
+                    document.getElementById("grade").innerText="Your Are Fail";
+                   
+                }
+            }
+            else{
+                document.getElementById("grade").innerText="Please Fill the Field";
+                
+            }
+        }
+
+        // this function is used to give suggetion as per temperature
+
+        const temperatureCalculate=()=>{
+            let temperature=document.getElementById("temperature").value;
+            let condition=temperature>=40?"Wear light Cloths":(temperature>=30)?"Weather is normal":(temperature>=20)?"Plz wear Jacket":(temperature>10)?"Plz wear Coat":(temperature>0)?"Plz Wear Coat":(temperature<0)?"Plz Stay Home":"Plz Fill the Field"
+            
+            document.getElementById("temp").innerText=condition
+        }
+        
+
+    </script>
+</body>
+</html>

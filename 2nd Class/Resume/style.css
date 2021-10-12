@@ -63,6 +63,7 @@ ul{
     color:brown;
     display: inline-block;
     margin: 5px 0;
+    font-weight: bold;
 }
 
 .qualification, .skills{
