@@ -33,12 +33,14 @@
 
         let n=22;
         let result1=0;
-        for(let k=0;k<=n;k++){            
-            result+= Number(k);
+        for(let k=0;k<=n;k++){
+            // console.log(k)
+            if(k%2==0){
+                document.write(k);
+            }
 
         }
         // console.log(n)
-        document.write(n);
  
     </script>   
 </body>
