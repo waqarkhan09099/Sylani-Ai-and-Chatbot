@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Class || for Loop</title>
+</head>
+<body>
+    <script>
+        let array1=[22,3,4,66,11,86,35,67];
+        let array2=[33,45,66,22,45,78,43,32]
+        let num1=0;
+        let num2=0;
+        for(let i=0;i<array1.length;i++){
+            num1 += array1[i];
+            for(let j=0;j<array2.length;j++){
+                num2 += array2[j];
+
+            }
+        }
+        console.log(num1);
+        console.log(num2);
+        let result=num1 + num2
+        console.log(result)
+        document.write( num1 , " + " , num2 , " = " , result );
+
+        // ...................................
+        // let n1 = 22; 
+        // Example output: 
+        // 2 4 6 8 10 12 14 16 18 20 22 OR each item on a new line
+        // ...................................
+
+        let n=22;
+        let result1=0;
+        for(let k=0;k<=n;k++){            
+            result+= Number(k);
+
+        }
+        // console.log(n)
+        document.write(n);
+ 
+    </script>   
+</body>
+</html>
