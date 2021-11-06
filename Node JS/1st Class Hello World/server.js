@@ -28,7 +28,7 @@ app.post('/api/student',(req,res)=>{
         return req.staus(400)
     }
     const newUser={
-        id:students.length+1,
+        id:res.id===req.id?(students.length+1):(students.length+1),
         first_name:req.body.first_name,
         last_name:req.body.last_name,
         email:req.body.email,
@@ -48,33 +48,44 @@ app.put('/api/student/:id',(req,res)=>{
     let index=students.findIndex(student=>{
         return (student.id=== Number.parseInt(id))
     })
+    if(index>=0){
 
-    let std=students[index]
-    std.first_name=first_name
-    std.last_name=last_name
-    std.email=email
-
-    res.json(std)
+        let std=students[index]
+        std.first_name=first_name
+        std.last_name=last_name
+        std.email=email
+        
+        res.json(std)
+    }else{
+        res.status(404)
+    }
 
 
 })
 
 app.delete('/api/student/:id',(req,res)=>{
     let id =req.params.id
-    let first_name=req.body.first_name
-    let last_name=req.body.last_name
-    let email=req.body.email
-
+    
     let index=students.findIndex(student=>{
         return (student.id=== Number.parseInt(id))
     })
-    let std=students[index]    
-    std.splice(0,std.length)
-    res.json(std)
-})
+    if(index>=0){
+        let std=students[index]    
+        students.splice(index,1)
+        res.json(std)
+    }else{
+        res.status(404)
+        res.send("params id is not found")
+    }
+})  
 
 app.get('/api/student',(req,res)=>{
     res.json(students)
+    
+})
+app.get('/api/student/:id',(req,res)=>{
+    let id=Number(req.params.id)-1
+    res.json(students[id])
     
 })
 
