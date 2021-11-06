@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Api</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div class="weather-container">
+        <label for="weatherInput">Enter City Name:</label>
+        <input type="text" id="weatherInput">
+        <div class="button">
+            <button onclick="weatherget()">Submit!</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script>
+        async function weatherget(){
+            let city=document.getElementById("weatherInput").value
+            const responce=await axios(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77af052038c15c2ca530a33e81901ee6&units=metric`)
+            const weatherinfo=responce;
+            console.log(weatherinfo)
+            document.getElementById("result").innerText=weatherinfo.data.main.temp+" "+weatherinfo.data.weather[0].main
+        }
+        
+    </script>
+</body>
+</html>
