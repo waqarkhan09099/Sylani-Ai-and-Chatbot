@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./form.css">
+    <title>Axios Apply</title>
+</head>
+
+<body>
+
+    <div class="form">
+        <h1>Add Information Form</h1>
+        <form id='form'>
+            <div class="user-info">
+                <label for="name">First Name :</label>
+                <input type="text" id="name" >
+            </div>
+            <div class="user-info">
+                <label for="last_name">Last Name :</label>
+                <input type="text" id="last_name" >
+            </div>
+            <div class="user-info">
+                <label for="email">Email :</label>
+                <input type="email" id="email" >
+            </div>
+            <div class="button">
+                <button type="submit" id="submit">Post Data</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="form">
+        <h1>Change Inforamtion Form</h1>
+        <form id='form2'>
+            <div class="user-info">
+                <label for="id">ID :</label>
+                <input type="number" id="putid" required>
+            </div>
+            <div class="user-info">
+                <label for="putname">First Name :</label>
+                <input type="text" id="putname" >
+            </div>
+            <div class="user-info">
+                <label for="putlast_name">Last Name :</label>
+                <input type="text" id="putlastname" >
+            </div>
+            <div class="user-info">
+                <label for="putemail">Email :</label>
+                <input type="email" id="putemail" >
+            </div>
+            <div class="button">
+                <button type="submit" id="putSubmit">Put Data</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <hr>
+    <div class="userData" id="userData">
+        <div class="button">
+            <label for="studentgetID">ID: </label>
+            <input type="number" id="studentgetID">
+            <button type="button" id="getreq" onclick="getData()">Get Data</button>  
+            <button type="button" id="delreq" onclick="deleteData()">Delete Data</button>
+        </div>
+        <div id="listData1" class="infoContainer">
+            <div class="studentInfo">
+                <div class="list-header id-class">
+                    <h3>S.No</h3>
+                </div>
+                <div class="list-header id-class">
+                    <h3>Student ID</h3>
+                </div>
+                <div class="list-header">
+                    <h3>First Name</h3>
+                </div>
+                <div class="list-header">
+                    <h3>Last Name</h3>
+                </div>
+                <div class="list-header email">
+                    <h3>Email</h3>
+                </div>
+            </div>
+
+        </div>
+        <div id="listData" class="infoContainer">
+
+        </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./axios.js"></script>
+</body>
+
+</html>

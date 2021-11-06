@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5"
+  },
+  "name": "axios-request",
+  "version": "1.0.0",
+  "main": "axios.js",
+  "scripts": {
+    "start": "npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
